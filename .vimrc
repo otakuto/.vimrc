@@ -7,6 +7,7 @@ set autoindent smartindent
 set wildmenu
 set wildmode=longest:full,full
 set shortmess+=I
+
 syntax on
 
 hi Comment cterm=none ctermfg=darkgreen
