@@ -23,17 +23,9 @@ hi Identifier ctermfg=brown
 "hi Function ctermfg=lightblue
 "hi Underlined ctermfg=yellow
 
-vnoremap 0 $ 
-inoremap 0 $ 
-vnoremap 1 0
-inoremap 1 0
-vnoremap <C-j> <Down>
 inoremap <C-j> <Down>
-vnoremap <C-k> <Up>
 inoremap <C-k> <Up>
-vnoremap <C-h> <Left>
 inoremap <C-h> <Left>
-vnoremap <C-l> <Right>
 inoremap <C-l> <Right>
 
 if has('vim_starting')
