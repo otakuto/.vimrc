@@ -1,6 +1,7 @@
 set number
+set cursorline
 set ruler
-set clipboard=unnamed
+set clipboard=unnamed,autoselect
 set tabstop=4
 set showmatch
 set autoindent smartindent
@@ -19,10 +20,7 @@ hi String cterm=none ctermfg=red
 hi link Character String
 hi link SpecialChar String
 hi PreProc ctermfg=grey
-"hi Special ctermfg=darkmagenta
-hi Identifier ctermfg=brown
-"hi Function ctermfg=lightblue
-"hi Underlined ctermfg=yellow
+hi CursorLine ctermbg=black
 
 imap <C-Space> <C-x><C-o>
 inoremap <C-j> <Down>
