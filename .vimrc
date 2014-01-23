@@ -23,6 +23,7 @@ hi Identifier ctermfg=brown
 "hi Function ctermfg=lightblue
 "hi Underlined ctermfg=yellow
 
+imap <C-Space> <C-x><C-o>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
