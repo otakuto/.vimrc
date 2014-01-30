@@ -1,10 +1,9 @@
 set number
-set cursorline
 set ruler
 set clipboard=unnamed,autoselect
 set tabstop=4
 set showmatch
-set autoindent smartindent
+set autoindent
 set wildmenu
 set wildmode=longest:full,full
 set shortmess+=I
@@ -20,7 +19,6 @@ hi String cterm=none ctermfg=red
 hi link Character String
 hi link SpecialChar String
 hi PreProc ctermfg=grey
-hi CursorLine ctermbg=black
 
 imap <C-Space> <C-x><C-o>
 inoremap <C-j> <Down>
