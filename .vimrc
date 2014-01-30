@@ -21,9 +21,9 @@ hi link SpecialChar String
 hi PreProc ctermfg=grey
 
 imap <C-Space> <C-x><C-o>
+inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
-inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
 if has('vim_starting')
