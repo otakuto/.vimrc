@@ -15,16 +15,17 @@ language C
 syntax on
 
 hi Comment cterm=none ctermfg=darkgreen
-hi Statement cterm=none ctermfg=lightblue
-hi Type ctermfg=lightblue
+hi Statement cterm=none ctermfg=blue
+hi Type cterm=none ctermfg=blue
 hi Constant cterm=none ctermfg=grey
 hi link Boolean Statement
 hi String cterm=none ctermfg=red
 hi link Character String
 hi link SpecialChar String
 hi PreProc ctermfg=grey
+hi LineNr ctermfg=darkcyan
 
-imap <C-Space> <C-x><C-o>
+inoremap <Nul> <C-x><C-p>
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
@@ -42,7 +43,7 @@ NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Rip-Rip/clang_complete'
 "let g:clang_periodic_quickfix=1
 "let g:clang_complete_copen=1
-"let g:clang_use_library=1
+"let g:clang_use_library=0
 "let g:clang_library_path='/usr/lib/llvm-3.0/lib'
 "let g:clang_user_options='-std=c++1y -stdlib=libc++'
 NeoBundle 'vim-jp/cpp-vim'
