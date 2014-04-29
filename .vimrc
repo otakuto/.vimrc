@@ -9,8 +9,9 @@ set autoindent
 set wildmenu
 set wildmode=longest:full,full
 set shortmess+=I
-language C
+set viminfo+=n~/.vim/.viminfo
 
+language C
 syntax on
 
 hi Comment cterm=none ctermfg=darkgreen
@@ -30,20 +31,20 @@ inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
 if has('vim_starting')
-set runtimepath+=~/.vim/bundle/neobundle.vim/
+set runtimepath+=~/.vim/neobundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
-
+call neobundle#rc(expand('~/.vim/neobundle/'))
+filetype plugin indent on
 NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Rip-Rip/clang_complete'
-NeoBundle 'vim-jp/cpp-vim'
-
 "let g:clang_periodic_quickfix=1
 "let g:clang_complete_copen=1
 "let g:clang_use_library=1
 "let g:clang_library_path='/usr/lib/llvm-3.0/lib'
 "let g:clang_user_options='-std=c++1y -stdlib=libc++'
+NeoBundle 'vim-jp/cpp-vim'
 
-"filetype plugin on
-"NeoBundleCheck
+NeoBundleCheck
