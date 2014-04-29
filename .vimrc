@@ -1,5 +1,6 @@
 set number
 set ruler
+set nowrap
 set clipboard=unnamed,autoselect
 set backspace=indent,eol,start
 set nocompatible
