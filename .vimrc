@@ -6,11 +6,13 @@ set backspace=indent,eol,start
 set nocompatible
 set tabstop=4
 set showmatch
-set autoindent
+set smartindent
 set wildmenu
 set wildmode=longest:full,full
 set shortmess+=I
 set viminfo+=n~/.vim/.viminfo
+set ignorecase
+set smartcase
 
 language C
 syntax on
@@ -26,27 +28,52 @@ hi link SpecialChar String
 hi PreProc ctermfg=grey
 hi LineNr ctermfg=darkcyan
 
-inoremap <Nul> <C-x><C-p>
-inoremap <C-h> <Left>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-l> <Right>
+inoremap <nul> <c-x><c-p>
+inoremap <c-k> <up>
+inoremap <c-j> <down>
+inoremap <c-l> <right>
+inoremap <c-h> <left>
+inoremap <c-up> <esc><c-y>a
+inoremap <c-down> <esc><c-e>a
+nnoremap <c-up> <c-y>
+nnoremap <c-down> <c-e>
+nnoremap <silent><f5> :QuickRun <cr>
+nnoremap <s-f5> <c-w>o
+nnoremap <silent><c-f> :ClangFormat<cr>
+nmap <f2> <plug>(altr-forward)
+
+augroup cpp-path
+	autocmd!
+	autocmd filetype cpp setlocal path=.,/usr/include/c++/v1
+augroup END
 
 if has('vim_starting')
-set runtimepath+=~/.vim/neobundle/neobundle.vim/
+	set runtimepath+=~/.vim/neobundle/neobundle.vim/
 endif
 
 call neobundle#rc(expand('~/.vim/neobundle/'))
 filetype plugin indent on
 NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler'
-NeoBundle 'Rip-Rip/clang_complete'
-"let g:clang_periodic_quickfix=1
-"let g:clang_complete_copen=1
-"let g:clang_use_library=0
-"let g:clang_library_path='/usr/lib/llvm-3.0/lib'
-"let g:clang_user_options='-std=c++1y -stdlib=libc++'
+NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'vim-jp/cpp-vim'
-
+NeoBundle 'kana/vim-operator-user'
+NeoBundle 'kana/vim-altr'
+NeoBundle 'rhysd/vim-clang-format'
+let g:clang_format#style_options=
+\{
+\'BasedOnStyle' : 'google',
+\'Standard' : 'C++11',
+\'BreakBeforeBraces' : 'Allman'
+\}
+NeoBundle 'thinca/vim-quickrun'
+let g:quickrun_config={}
+let g:quickrun_config._={'runner' : 'vimproc'}
+let g:quickrun_config=
+\{
+\	'cpp' :
+\	{
+\		'command' : "clang++",
+\		'cmdopt' : '-Wall -std=c++1y -stdlib=libc++',
+\	},
+\}
 NeoBundleCheck
