@@ -37,7 +37,7 @@ inoremap <c-up> <esc><c-y>a
 inoremap <c-down> <esc><c-e>a
 nnoremap <c-up> <c-y>
 nnoremap <c-down> <c-e>
-nnoremap <silent><f5> :QuickRun <cr>
+nnoremap <silent><f5> :QuickRun<cr>
 nnoremap <s-f5> <c-w>o
 nnoremap <silent><c-f> :ClangFormat<cr>
 nmap <f2> <plug>(altr-forward)
@@ -77,3 +77,4 @@ let g:quickrun_config=
 \	},
 \}
 NeoBundleCheck
+
