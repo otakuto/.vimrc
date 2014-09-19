@@ -73,7 +73,7 @@ let g:quickrun_config=
 \	'cpp' :
 \	{
 \		'command' : "clang++",
-\		'cmdopt' : '-Wall -std=c++1y -stdlib=libc++',
+\		'cmdopt' : '-Wall -std=c++1z -stdlib=libc++',
 \	},
 \}
 NeoBundleCheck
