@@ -53,7 +53,7 @@ if has('vim_starting')
 	set runtimepath+=~/.vim/neobundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/neobundle/'))
+call neobundle#begin(expand('~/.vim/neobundle/'))
 filetype plugin indent on
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc.vim'
@@ -78,5 +78,5 @@ let g:quickrun_config=
 \		'cmdopt' : '-Wall -std=c++1z -stdlib=libc++',
 \	},
 \}
+call neobundle#end()
 NeoBundleCheck
-
