@@ -30,6 +30,7 @@ hi link Character String
 hi link SpecialChar String
 hi PreProc ctermfg=grey
 hi LineNr ctermfg=darkcyan
+hi StatusLine ctermfg=white
 
 inoremap <nul> <c-p>
 inoremap <c-k> <up>
@@ -91,11 +92,16 @@ let g:quickrun_config=
 call neobundle#end()
 NeoBundleCheck
 
+autocmd BufNewFile *.c 0r ! echo '
+\\#include <stdio.h>\n
+\\n
+\int main()\n
+\{\n
+\}'
 autocmd BufNewFile *.cpp 0r ! echo '
 \\#include <iostream>\n
 \\n
 \int main()\n
 \{\n
-\}
-\'
+\}'
 
