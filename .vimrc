@@ -13,6 +13,9 @@ set shortmess+=I
 set viminfo+=n~/.vim/.viminfo
 set ignorecase
 set smartcase
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+set laststatus=2
+set showcmd
 
 language C
 syntax on
@@ -27,6 +30,7 @@ hi link Character String
 hi link SpecialChar String
 hi PreProc ctermfg=grey
 hi LineNr ctermfg=darkcyan
+hi StatusLine cterm=none ctermfg=white
 
 inoremap <nul> <c-x><c-p>
 inoremap <c-k> <up>
@@ -42,6 +46,7 @@ nnoremap d "_d
 nnoremap D "_D
 nnoremap <silent><f5> :QuickRun<cr>
 nnoremap <silent><c-f> :ClangFormat<cr>
+nnoremap <esc><esc> :noh<cr>
 nmap <f2> <plug>(altr-forward)
 
 augroup cpp-path
@@ -74,7 +79,7 @@ let g:quickrun_config=
 \{
 \	'cpp' :
 \	{
-\		'command' : "clang++",
+\		'command' : 'clang++',
 \		'cmdopt' : '-Wall -std=c++1z -stdlib=libc++',
 \	},
 \}
