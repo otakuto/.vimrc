@@ -30,9 +30,8 @@ hi link Character String
 hi link SpecialChar String
 hi PreProc ctermfg=grey
 hi LineNr ctermfg=darkcyan
-hi StatusLine cterm=none ctermfg=white
 
-inoremap <nul> <c-x><c-p>
+inoremap <nul> <c-p>
 inoremap <c-k> <up>
 inoremap <c-j> <down>
 inoremap <c-l> <right>
@@ -46,12 +45,18 @@ nnoremap d "_d
 nnoremap D "_D
 nnoremap <silent><f5> :QuickRun<cr>
 nnoremap <silent><c-f> :ClangFormat<cr>
-nnoremap <esc><esc> :noh<cr>
 nmap <f2> <plug>(altr-forward)
+nnoremap <silent><esc><esc> :noh<cr>
+nnoremap <c-g><c-g> :Gtags<cr><cr>
+nnoremap <c-g>g :Gtags -g<cr><cr>
+nnoremap <c-g>r :Gtags -r<cr><cr>
+nnoremap <c-g>f :Gtags -f<cr><cr>
+nnoremap <c-n> :cn<cr>
+nnoremap <c-p> :cp<cr>
 
 augroup cpp-path
 	autocmd!
-	autocmd filetype cpp setlocal path=.,/usr/include/c++/v1
+	autocmd filetype cpp setlocal path=.,/usr/include/c++/v1/,
 augroup END
 
 if has('vim_starting')
@@ -85,3 +90,12 @@ let g:quickrun_config=
 \}
 call neobundle#end()
 NeoBundleCheck
+
+autocmd BufNewFile *.cpp 0r ! echo '
+\\#include <iostream>\n
+\\n
+\int main()\n
+\{\n
+\}
+\'
+
