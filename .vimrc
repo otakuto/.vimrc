@@ -33,27 +33,33 @@ hi LineNr ctermfg=darkcyan
 hi StatusLine ctermfg=white
 
 inoremap <nul> <c-p>
-inoremap <c-k> <up>
-inoremap <c-j> <down>
-inoremap <c-l> <right>
 inoremap <c-h> <left>
-inoremap <c-up> <esc><c-y>a
-inoremap <c-down> <esc><c-e>a
-nnoremap <c-up> <c-y>
-nnoremap <c-down> <c-e>
+inoremap <c-j> <down>
+inoremap <c-k> <up>
+inoremap <c-l> <right>
+inoremap <c-o> <backspace>
+noremap <c-h> <left>
+noremap <c-j> <down>
+noremap <c-k> <up>
+noremap <c-l> <right>
+cnoremap <c-h> <left>
+cnoremap <c-l> <right>
+cnoremap <c-o> <backspace>
+cnoremap <c-p> <up>
+cnoremap <c-n> <down>
 nnoremap x "_x
 nnoremap d "_d
 nnoremap D "_D
-nnoremap <silent><f5> :QuickRun<cr>
-nnoremap <silent><c-f> :ClangFormat<cr>
+nnoremap <silent> <f5> :QuickRun<cr>
+nnoremap <silent> <c-f> :ClangFormat<cr>
 nmap <f2> <plug>(altr-forward)
-nnoremap <silent><esc><esc> :noh<cr>
+nnoremap <silent> <esc><esc> :noh<cr>
+nnoremap <silent> <c-n> :cn<cr>
+nnoremap <silent> <c-p> :cp<cr>
 nnoremap <c-g><c-g> :Gtags<cr><cr>
 nnoremap <c-g>g :Gtags -g<cr><cr>
 nnoremap <c-g>r :Gtags -r<cr><cr>
 nnoremap <c-g>f :Gtags -f<cr><cr>
-nnoremap <c-n> :cn<cr>
-nnoremap <c-p> :cp<cr>
 
 augroup cpp-path
 	autocmd!
@@ -89,6 +95,7 @@ let g:quickrun_config=
 \		'cmdopt' : '-Wall -std=c++1z -stdlib=libc++',
 \	},
 \}
+NeoBundle 'Shougo/unite.vim'
 call neobundle#end()
 NeoBundleCheck
 
