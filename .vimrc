@@ -89,6 +89,7 @@ let g:quickrun_config=
 \	},
 \}
 call neobundle#end()
+NeoBundle 'Shougo/unite.vim'
 NeoBundleCheck
 
 autocmd BufNewFile *.cpp 0r ! echo '
