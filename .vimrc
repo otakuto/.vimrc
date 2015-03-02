@@ -1,9 +1,9 @@
+set nocompatible
 set number
 set ruler
 set nowrap
 set clipboard=unnamed,autoselect
 set backspace=indent,eol,start
-set nocompatible
 set tabstop=4
 set showmatch
 set smartindent
@@ -15,10 +15,13 @@ set ignorecase
 set smartcase
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%4c%V%4P[%l/%L]
 set laststatus=2
+set showtabline=2
 set showcmd
 set matchpairs+=<:>
 set matchtime=0
 set splitright
+set notimeout
+set nottimeout
 
 language C
 syntax on
@@ -55,34 +58,50 @@ cnoremap <c-l> <right>
 cnoremap <c-o> <backspace>
 cnoremap <c-p> <up>
 cnoremap <c-n> <down>
-noremap <silent> <c-w>c :tabnew<cr>
-noremap <silent> <c-w>" :split<cr>
-noremap <silent> <c-w># :vsplit<cr>
-noremap <c-w><space> <c-w>=
-noremap <c-w>x <c-w>q
-noremap <c-w>n gt
-noremap <c-w>p gT
-noremap <c-w><c-n> <nop>
-inoremap { {}<Left>
-inoremap [ []<Left>
-inoremap ( ()<Left>
-inoremap " ""<Left>
-inoremap ' ''<Left>
-inoremap < <><Left>
+noremap s <nop>
+noremap sh <c-w>h
+noremap sj <c-w>j
+noremap sk <c-w>k
+noremap sl <c-w>l
+noremap sH <c-w>H
+noremap sJ <c-w>J
+noremap sK <c-w>K
+noremap sL <c-w>L
+noremap sx <c-w>q
+noremap sq <c-w>q
+noremap sn gt
+noremap sp gT
+noremap s<space> <c-w>=
+noremap <silent> sc :tabnew<cr>
+noremap <silent> sb :Unite buffer -tab<cr>
+noremap <silent> sw :Unite window -tab<cr>
+noremap <silent> s" :split<cr>
+noremap <silent> s@ :split<cr>
+noremap <silent> s# :vsplit<cr>
+inoremap { {}<left>
+inoremap [ []<left>
+inoremap ( ()<left>
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap < <><left>
 nnoremap x "_x
 nnoremap d "_d
 nnoremap D "_D
 inoremap <silent> <f5> <esc>:QuickRun<cr>
 noremap <silent> <f5> <esc>:QuickRun<cr>
 nmap <f2> <plug>(altr-forward)
-nnoremap <silent> <esc><esc> :noh<cr>
 nnoremap <silent> <c-n> :cn<cr>
 nnoremap <silent> <c-p> :cp<cr>
-nnoremap <c-g><c-g> :Gtags<cr><cr>
-nnoremap <c-g>g :Gtags -g<cr><cr>
-nnoremap <c-g>r :Gtags -r<cr><cr>
-nnoremap <c-g>f :Gtags -f<cr><cr>
-nnoremap <c-f>f :Unite file<cr>
+nnoremap <silent> <space><space> :noh<cr>
+nmap <space>g [Gtags]
+nnoremap [Gtags] <nop>
+nnoremap [Gtags]g :Gtags<cr><cr>
+nnoremap [Gtags]gr :Gtags -g<cr><cr>
+nnoremap [Gtags]r :Gtags -r<cr><cr>
+nnoremap [Gtags]f :Gtags -f<cr><cr>
+nmap <space>u [unite]
+nnoremap [unite] <nop>
+nnoremap <silent> [unite]f :Unite file -tab<cr>
 
 function! s:SID_PREFIX()
 	return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
@@ -92,8 +111,8 @@ function! s:my_tabline()
 	let s = ''
 	for i in range(1, tabpagenr('$'))
 		let bufnrs = tabpagebuflist(i)
-		let bufnr = bufnrs[tabpagewinnr(i) - 1]  " first window, first appears
-		let no = i  " display 0-origin tabpagenr.
+		let bufnr = bufnrs[tabpagewinnr(i) - 1]
+		let no = i
 		let mod = getbufvar(bufnr, '&modified') ? '!' : ' '
 		let title = fnamemodify(bufname(bufnr), ':t')
 		let title = '[' . title . ']'
@@ -107,7 +126,10 @@ function! s:my_tabline()
 	return s
 endfunction
 let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
-set showtabline=2
+
+for n in range(1, 9)
+	execute 'nnoremap <silent> s'.n ':<c-u>tabnext'.n.'<cr>'
+endfor
 
 augroup cpp-path
 	autocmd!
@@ -138,6 +160,8 @@ let g:quickrun_config =
 \	'_' :
 \	{
 \		'outputter' : 'multi:buffer:quickfix',
+\		'runner' : 'vimproc',
+\		'runner/vimproc/updatetime' : '10',
 \		'hook/time/enable' : '1',
 \	},
 \	'cpp' :
@@ -153,7 +177,6 @@ let g:quickrun_config =
 \}
 NeoBundle 'Shougo/unite.vim'
 let g:unite_enable_split_vertically = 1
-let g:unite_enable_start_insert=1
 call neobundle#end()
 NeoBundleCheck
 
