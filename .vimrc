@@ -27,23 +27,23 @@ set nottimeout
 
 language C
 syntax on
-hi Comment cterm=none ctermfg=darkgreen
-hi Statement cterm=none ctermfg=blue
-hi Type cterm=none ctermfg=blue
-hi Constant cterm=none ctermfg=grey
+hi Comment ctermfg=darkgreen cterm=none 
+hi Statement ctermfg=blue cterm=none 
+hi Type ctermfg=blue cterm=none 
+hi Constant ctermfg=grey cterm=none 
 hi link Boolean Statement
-hi String cterm=none ctermfg=red
+hi String ctermfg=red cterm=none 
 hi link Character String
 hi link SpecialChar String
 hi PreProc ctermfg=grey
 hi LineNr ctermfg=darkcyan
 hi MatchParen ctermbg=blue
-hi StatusLine ctermfg=white ctermbg=black
-hi StatusLineNC ctermfg=darkgrey ctermbg=white
+hi StatusLine ctermfg=black ctermbg=white cterm=none term=none
+hi StatusLineNC ctermfg=white ctermbg=black cterm=none term=none
 
-hi TabLineFill ctermbg=white ctermfg=black cterm=none
+hi TabLineFill ctermbg=white ctermfg=black cterm=none term=none
 hi TabLine ctermbg=white ctermfg=black cterm=none term=none
-hi TabLineSel ctermbg=black ctermfg=white
+hi TabLineSel ctermbg=black ctermfg=white cterm=none term=none
 
 inoremap <nul> <c-p>
 inoremap <c-h> <left>
