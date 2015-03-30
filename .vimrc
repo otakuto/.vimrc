@@ -27,13 +27,13 @@ set nottimeout
 
 language C
 syntax on
-hi Comment ctermfg=darkgreen cterm=none 
+hi Comment ctermfg=darkgreen cterm=none
 hi Type ctermfg=blue cterm=bold term=none
 hi Statement ctermfg=blue cterm=bold term=none
 hi link Boolean Type
 hi link MatchParen Type
-hi Constant ctermfg=grey cterm=none 
-hi String ctermfg=red cterm=none 
+hi Constant ctermfg=grey cterm=none
+hi String ctermfg=red cterm=none
 hi link Character String
 hi link SpecialChar String
 hi PreProc ctermfg=grey
@@ -180,6 +180,14 @@ NeoBundle 'Shougo/unite.vim'
 "hi link clighterStructDecl Type
 "hi link clighterClassDecl Type
 NeoBundleCheck
+
+function! s:remove_dust()
+	let cursor = getpos(".")
+	%s/\s\+$//ge
+	call setpos(".", cursor)
+	unlet cursor
+endfunction
+autocmd BufWritePre * call <SID>remove_dust()
 
 autocmd BufNewFile *.c 0r ! echo '
 \\#include <stdio.h>\n
