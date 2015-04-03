@@ -81,8 +81,7 @@ noremap <silent> s" :split<cr>
 noremap <silent> s@ :split<cr>
 noremap <silent> s# :vsplit<cr>
 nnoremap x "_x
-nnoremap d "_d
-nnoremap D "_D
+nnoremap X "_dd
 inoremap <silent> <f5> <esc>:QuickRun<cr>
 noremap <silent> <f5> <esc>:QuickRun<cr>
 nmap <f2> <plug>(altr-forward)
