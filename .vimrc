@@ -41,9 +41,9 @@ hi LineNr ctermfg=darkcyan
 hi StatusLine ctermfg=black ctermbg=white cterm=none term=none
 hi StatusLineNC ctermfg=white ctermbg=black cterm=none term=none
 
-hi TabLineFill ctermbg=white ctermfg=black cterm=none term=none
-hi TabLine ctermbg=white ctermfg=black cterm=none term=none
-hi TabLineSel ctermbg=black ctermfg=white cterm=none term=none
+hi TabLineFill ctermbg=white ctermfg=black cterm=bold term=none
+hi TabLine ctermbg=white ctermfg=black cterm=bold term=none
+hi TabLineSel ctermbg=black ctermfg=white cterm=bold term=none
 
 inoremap <nul> <c-p>
 inoremap <c-h> <left>
@@ -81,8 +81,7 @@ noremap <silent> s" :split<cr>
 noremap <silent> s@ :split<cr>
 noremap <silent> s# :vsplit<cr>
 nnoremap x "_x
-nnoremap d "_d
-nnoremap D "_D
+nnoremap X "_dd
 inoremap <silent> <f5> <esc>:QuickRun<cr>
 noremap <silent> <f5> <esc>:QuickRun<cr>
 nmap <f2> <plug>(altr-forward)
