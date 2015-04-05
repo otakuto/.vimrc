@@ -41,9 +41,9 @@ hi LineNr ctermfg=darkcyan
 hi StatusLine ctermfg=black ctermbg=white cterm=none term=none
 hi StatusLineNC ctermfg=white ctermbg=black cterm=none term=none
 
-hi TabLineFill ctermbg=white ctermfg=black cterm=none term=none
-hi TabLine ctermbg=white ctermfg=black cterm=none term=none
-hi TabLineSel ctermbg=black ctermfg=white cterm=none term=none
+hi TabLineFill ctermbg=white ctermfg=black cterm=bold term=none
+hi TabLine ctermbg=white ctermfg=black cterm=bold term=none
+hi TabLineSel ctermbg=black ctermfg=white cterm=bold term=none
 
 inoremap <nul> <c-p>
 inoremap <c-h> <left>
