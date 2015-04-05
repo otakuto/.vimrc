@@ -80,8 +80,8 @@ noremap <silent> sw :Unite window -tab<cr>
 noremap <silent> s" :split<cr>
 noremap <silent> s@ :split<cr>
 noremap <silent> s# :vsplit<cr>
-nnoremap x "_x
-nnoremap X "_dd
+noremap x "_x
+noremap X "_dd
 inoremap <silent> <f5> <esc>:QuickRun<cr>
 noremap <silent> <f5> <esc>:QuickRun<cr>
 nmap <f2> <plug>(altr-forward)
