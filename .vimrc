@@ -44,6 +44,12 @@ highlight TabLineFill ctermbg=white ctermfg=black cterm=bold term=none
 highlight TabLine ctermbg=white ctermfg=black cterm=bold term=none
 highlight TabLineSel ctermbg=black ctermfg=white cterm=bold term=none
 
+inoremap {} {}<left><c-m><up><right>
+inoremap [] []<left>
+inoremap () ()<left>
+inoremap "" ""<left>
+inoremap '' ''<left>
+inoremap <> <><left>
 inoremap <nul> <c-p>
 inoremap <c-h> <left>
 inoremap <c-j> <down>
