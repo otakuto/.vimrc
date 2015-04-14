@@ -26,23 +26,23 @@ set nottimeout
 
 language C
 syntax on
-hi Comment ctermfg=darkgreen cterm=none
-hi Type ctermfg=blue cterm=bold term=none
-hi Statement ctermfg=blue cterm=bold term=none
-hi link Boolean Type
-hi link MatchParen Type
-hi Constant ctermfg=grey cterm=none
-hi String ctermfg=red cterm=none
-hi link Character String
-hi link SpecialChar String
-hi PreProc ctermfg=grey
-hi LineNr ctermfg=darkcyan
-hi StatusLine ctermfg=black ctermbg=white cterm=none term=none
-hi StatusLineNC ctermfg=white ctermbg=black cterm=none term=none
+highlight Comment ctermfg=darkgreen cterm=none
+highlight Type ctermfg=blue cterm=bold term=none
+highlight Statement ctermfg=blue cterm=bold term=none
+highlight link Boolean Type
+highlight link MatchParen Type
+highlight Constant ctermfg=grey cterm=none
+highlight String ctermfg=red cterm=none
+highlight link Character String
+highlight link SpecialChar String
+highlight PreProc ctermfg=grey
+highlight LineNr ctermfg=darkcyan
+highlight StatusLine ctermfg=black ctermbg=white cterm=none term=none
+highlight StatusLineNC ctermfg=white ctermbg=black cterm=none term=none
 
-hi TabLineFill ctermbg=white ctermfg=black cterm=bold term=none
-hi TabLine ctermbg=white ctermfg=black cterm=bold term=none
-hi TabLineSel ctermbg=black ctermfg=white cterm=bold term=none
+highlight TabLineFill ctermbg=white ctermfg=black cterm=bold term=none
+highlight TabLine ctermbg=white ctermfg=black cterm=bold term=none
+highlight TabLineSel ctermbg=black ctermfg=white cterm=bold term=none
 
 inoremap <nul> <c-p>
 inoremap <c-h> <left>
