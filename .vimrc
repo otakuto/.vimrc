@@ -173,10 +173,6 @@ NeoBundle 'Shougo/unite.vim'
 let g:unite_enable_split_vertically = 1
 call neobundle#end()
 NeoBundle 'Shougo/unite.vim'
-"NeoBundle 'bbchung/clighter'
-"let g:clighter_libclang_file = '/usr/lib/libclang.so'
-"hi link clighterStructDecl Type
-"hi link clighterClassDecl Type
 NeoBundleCheck
 
 function! s:remove_dust()
