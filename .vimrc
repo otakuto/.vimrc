@@ -50,6 +50,7 @@ inoremap [] []<left>
 inoremap () ()<left>
 inoremap "" ""<left>
 inoremap '' ''<left>
+inoremap `` ``<left>
 inoremap <> <><left>
 inoremap <nul> <c-p>
 inoremap <c-h> <left>
