@@ -179,9 +179,9 @@ let g:quickrun_config =
 \}
 NeoBundle 'Shougo/unite.vim'
 let g:unite_enable_split_vertically = 1
-call neobundle#end()
 NeoBundle 'Shougo/unite.vim'
 NeoBundleCheck
+call neobundle#end()
 
 function! s:remove_dust()
 	let cursor = getpos(".")
