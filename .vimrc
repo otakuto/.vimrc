@@ -52,7 +52,6 @@ inoremap "" ""<left>
 inoremap '' ''<left>
 inoremap `` ``<left>
 inoremap <> <><left>
-inoremap <nul> <c-p>
 inoremap <c-h> <left>
 inoremap <c-j> <down>
 inoremap <c-k> <up>
