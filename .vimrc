@@ -94,6 +94,7 @@ nmap <f2> <plug>(altr-forward)
 nnoremap <silent> <c-n> :cn<cr>
 nnoremap <silent> <c-p> :cp<cr>
 nnoremap <silent> <space><space> :noh<cr>
+noremap <space>w :w<cr>
 nmap <space>g [Gtags]
 nnoremap [Gtags] <nop>
 nnoremap [Gtags]g :Gtags<cr><cr>
@@ -178,7 +179,6 @@ let g:quickrun_config =
 \}
 NeoBundle 'Shougo/unite.vim'
 let g:unite_enable_split_vertically = 1
-NeoBundle 'Shougo/unite.vim'
 NeoBundleCheck
 call neobundle#end()
 
