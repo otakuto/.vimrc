@@ -138,6 +138,16 @@ augroup cpp-path
 	autocmd filetype cpp setlocal path=.,/usr/include/boost/,/usr/include/c++/v1/
 augroup END
 
+augroup vimrc-auto-mkdir
+	autocmd!
+	autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
+	function! s:auto_mkdir(dir, force)
+	if !isdirectory(a:dir) && (a:force || input(printf('"%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$')
+	call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
+	endif
+	endfunction
+augroup END
+
 if has('vim_starting')
 	set runtimepath+=~/.vim/neobundle/neobundle.vim/
 endif
