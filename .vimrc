@@ -38,6 +38,7 @@ highlight link Character String
 highlight link SpecialChar String
 highlight PreProc ctermfg=grey
 highlight LineNr ctermfg=darkcyan
+highlight Pmenu  ctermfg=black ctermbg=cyan
 highlight StatusLine ctermfg=black ctermbg=white cterm=none term=none
 highlight StatusLineNC ctermfg=white ctermbg=black cterm=none term=none
 
