@@ -27,18 +27,18 @@ set nottimeout
 language C
 syntax on
 highlight Comment ctermfg=darkgreen cterm=none
+highlight Constant ctermfg=grey cterm=none
 highlight Type ctermfg=blue cterm=bold term=none
 highlight Statement ctermfg=blue cterm=bold term=none
-highlight Search ctermbg=white cterm=none
 highlight link Boolean Type
-highlight link MatchParen Type
-highlight Constant ctermfg=grey cterm=none
 highlight String ctermfg=red cterm=none
 highlight link Character String
 highlight link SpecialChar String
+highlight Search ctermbg=white cterm=none
+highlight MatchParen ctermbg=cyan
 highlight PreProc ctermfg=grey
 highlight LineNr ctermfg=darkcyan
-highlight Pmenu  ctermfg=black ctermbg=cyan
+highlight Pmenu ctermfg=black ctermbg=cyan
 highlight StatusLine ctermfg=black ctermbg=white cterm=none term=none
 highlight StatusLineNC ctermfg=white ctermbg=black cterm=none term=none
 
