@@ -23,6 +23,7 @@ set matchtime=0
 set splitright
 set notimeout
 set nottimeout
+set autochdir
 
 language C
 syntax on
