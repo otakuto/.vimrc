@@ -32,7 +32,7 @@ highlight Constant ctermfg=grey cterm=none
 highlight Type ctermfg=blue cterm=bold term=none
 highlight Statement ctermfg=blue cterm=bold term=none
 highlight link Boolean Type
-highlight String ctermfg=red cterm=none
+highlight String ctermfg=red cterm=bold
 highlight link Character String
 highlight link SpecialChar String
 highlight Search ctermbg=white cterm=none
