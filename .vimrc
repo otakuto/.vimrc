@@ -107,6 +107,8 @@ nmap <space>u [unite]
 nnoremap [unite] <nop>
 nnoremap <silent> [unite]f :Unite file -tab<cr>
 nnoremap <silent> [unite]F :Unite file<cr>
+vnoremap <esc> <esc><esc>
+inoremap <esc> <esc><esc>
 
 function! s:SID_PREFIX()
 	return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
