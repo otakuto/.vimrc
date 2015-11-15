@@ -60,8 +60,8 @@ inoremap <c-k> <up>
 inoremap <c-l> <right>
 inoremap <c-o> <backspace>
 noremap <c-h> <left>
-noremap <c-j> <down>
-noremap <c-k> <up>
+noremap <c-j> <c-e>j
+noremap <c-k> <c-y>k
 noremap <c-l> <right>
 cnoremap <c-h> <left>
 cnoremap <c-l> <right>
