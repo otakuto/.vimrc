@@ -97,6 +97,7 @@ nnoremap <silent> <c-n> :cn<cr>
 nnoremap <silent> <c-p> :cp<cr>
 nnoremap <silent> <space><space> :noh<cr>
 noremap <space>w :w<cr>
+nnoremap <space> <nop>
 nmap <space>g [Gtags]
 nnoremap [Gtags] <nop>
 nnoremap [Gtags]g :Gtags<cr><cr>
