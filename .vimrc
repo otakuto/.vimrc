@@ -1,3 +1,4 @@
+set nocompatible
 set number
 set ruler
 set nowrap
@@ -90,6 +91,7 @@ noremap <silent> s@ :split<cr>
 noremap <silent> s# :vsplit<cr>
 noremap x "_x
 noremap X "_dd
+vnoremap p "0p
 inoremap <silent> <f5> <esc>:QuickRun<cr>
 noremap <silent> <f5> <esc>:QuickRun<cr>
 nmap <f2> <plug>(altr-forward)
