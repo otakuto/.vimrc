@@ -25,6 +25,8 @@ set splitright
 set notimeout
 set nottimeout
 set autochdir
+set encoding=utf-8
+set fileencoding=utf-8
 
 language C
 syntax on
