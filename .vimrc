@@ -95,7 +95,11 @@ noremap x "_x
 noremap X "_dd
 vnoremap p "0p
 inoremap <silent> <f5> <esc>:QuickRun<cr>
-noremap <silent> <f5> <esc>:QuickRun<cr>
+nnoremap <silent> <f5> <esc>:QuickRun<cr>
+inoremap <silent> <f6> <esc>:Unite build<cr>
+nnoremap <silent> <f6> <esc>:Unite build<cr>
+inoremap <silent> <f7> :!./a.out<cr>
+nnoremap <silent> <f7> :!./a.out<cr>
 nmap <f2> <plug>(altr-forward)
 nnoremap <silent> <c-n> :cn<cr>
 nnoremap <silent> <c-p> :cp<cr>
@@ -112,8 +116,6 @@ nmap <space>u [unite]
 nnoremap [unite] <nop>
 nnoremap <silent> [unite]f :Unite file -tab<cr>
 nnoremap <silent> [unite]F :Unite file<cr>
-vnoremap <esc> <esc><esc>
-inoremap <esc> <esc><esc>
 
 function! s:SID_PREFIX()
 	return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
@@ -166,6 +168,7 @@ call neobundle#begin(expand('~/.vim/neobundle/'))
 filetype plugin indent on
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc.vim'
+NeoBundle 'Shougo/unite-build'
 NeoBundle 'vim-jp/cpp-vim'
 NeoBundle 'kana/vim-operator-user'
 NeoBundle 'kana/vim-altr'
