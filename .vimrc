@@ -96,10 +96,10 @@ noremap X "_dd
 vnoremap p "0p
 inoremap <silent> <f5> <esc>:QuickRun<cr>
 nnoremap <silent> <f5> <esc>:QuickRun<cr>
-inoremap <silent> <f6> <esc>:Unite build<cr>
-nnoremap <silent> <f6> <esc>:Unite build<cr>
-inoremap <silent> <f7> :!./a.out<cr>
-nnoremap <silent> <f7> :!./a.out<cr>
+inoremap <silent> <f6> <esc>:silent !make && ./a.out<cr>:redraw!<cr>
+nnoremap <silent> <f6> <esc>:silent !make && ./a.out<cr>:redraw!<cr>
+inoremap <silent> <f7> <esc>:Unite build<cr>
+nnoremap <silent> <f7> <esc>:Unite build<cr>
 nmap <f2> <plug>(altr-forward)
 nnoremap <silent> <c-n> :cn<cr>
 nnoremap <silent> <c-p> :cp<cr>
