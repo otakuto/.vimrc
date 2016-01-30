@@ -38,7 +38,7 @@ highlight link Boolean Type
 highlight String ctermfg=red cterm=bold
 highlight link Character String
 highlight link SpecialChar String
-highlight Search ctermfg=darkmagenta ctermbg=black cterm=reverse,bold
+highlight Search ctermfg=white ctermbg=darkmagenta cterm=bold
 highlight link IncSearch Search
 highlight MatchParen ctermbg=cyan
 highlight PreProc ctermfg=grey
@@ -50,6 +50,8 @@ highlight StatusLineNC ctermfg=white ctermbg=black cterm=none term=none
 highlight TabLineFill ctermbg=white ctermfg=black cterm=bold term=none
 highlight TabLine ctermbg=white ctermfg=black cterm=bold term=none
 highlight TabLineSel ctermbg=black ctermfg=white cterm=bold term=none
+
+highlight EasyMotionTarget ctermfg=white ctermbg=darkmagenta cterm=bold
 
 inoremap {} {}<left>
 inoremap [] []<left>
@@ -118,10 +120,10 @@ nnoremap [Gtags]g :Gtags<cr><cr>
 nnoremap [Gtags]e :Gtags -g<cr><cr>
 nnoremap [Gtags]r :Gtags -r<cr><cr>
 nnoremap [Gtags]f :Gtags -f<cr><cr>
-nmap <space>u [unite]
-nnoremap [unite] <nop>
-nnoremap <silent> [unite]f :Unite file -tab<cr>
-nnoremap <silent> [unite]F :Unite file<cr>
+nmap <space>u [Unite]
+nnoremap [Unite] <nop>
+nnoremap <silent> [Unite]f :Unite file -tab<cr>
+nnoremap <silent> [Unite]F :Unite file<cr>
 
 function! s:SID_PREFIX()
 	return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
@@ -185,6 +187,8 @@ NeoBundle 'vim-jp/cpp-vim'
 NeoBundle 'kana/vim-operator-user'
 NeoBundle 'kana/vim-altr'
 NeoBundle 'Lokaltog/vim-easymotion'
+let g:EasyMotion_do_shade = 0
+let g:EasyMotion_smartcase = 1
 NeoBundle 'rhysd/vim-clang-format'
 let g:clang_format#style_options =
 \{
