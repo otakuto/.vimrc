@@ -38,7 +38,8 @@ highlight link Boolean Type
 highlight String ctermfg=red cterm=bold
 highlight link Character String
 highlight link SpecialChar String
-highlight Search ctermbg=white cterm=none
+highlight Search ctermfg=white ctermbg=magenta cterm=bold
+highlight link IncSearch Search
 highlight MatchParen ctermbg=cyan
 highlight PreProc ctermfg=grey
 highlight LineNr ctermfg=darkcyan
