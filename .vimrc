@@ -101,6 +101,11 @@ nnoremap <silent> <f6> <esc>:silent !cd build && make && ./a.out<cr>:redraw!<cr>
 inoremap <silent> <f7> <esc>:Unite build<cr>
 nnoremap <silent> <f7> <esc>:Unite build<cr>
 nmap <f2> <plug>(altr-forward)
+map ; <plug>(easymotion-s2)
+map f <plug>(easymotion-fl)
+map F <plug>(easymotion-Fl)
+map t <plug>(easymotion-tl)
+map T <plug>(easymotion-Tl)
 nnoremap <silent> <c-n> :cn<cr>
 nnoremap <silent> <c-p> :cp<cr>
 nnoremap <silent> <space><space> :noh<cr>
@@ -178,6 +183,7 @@ NeoBundle 'Shougo/unite-build'
 NeoBundle 'vim-jp/cpp-vim'
 NeoBundle 'kana/vim-operator-user'
 NeoBundle 'kana/vim-altr'
+NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'rhysd/vim-clang-format'
 let g:clang_format#style_options =
 \{
