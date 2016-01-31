@@ -218,6 +218,7 @@ let g:quickrun_config =
 \		'cmdopt' : '-Wall -std=c11',
 \	},
 \}
+NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/unite.vim'
 let g:unite_enable_split_vertically = 1
 NeoBundleCheck
