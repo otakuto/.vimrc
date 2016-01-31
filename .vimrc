@@ -97,6 +97,7 @@ noremap <silent> s# :vsplit<cr>
 noremap x "_x
 noremap X "_dd
 vnoremap p "0p
+vnoremap i I
 inoremap <silent> <f5> <esc>:QuickRun<cr>
 nnoremap <silent> <f5> <esc>:QuickRun<cr>
 inoremap <silent> <f6> <esc>:silent !cd build && make && ./a.out<cr>:redraw!<cr>
