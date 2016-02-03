@@ -65,10 +65,10 @@ inoremap <c-j> <down>
 inoremap <c-k> <up>
 inoremap <c-l> <right>
 inoremap <c-o> <backspace>
-noremap <c-h> <left>
+noremap <c-h> b
 noremap <c-j> <c-e>j
 noremap <c-k> <c-y>k
-noremap <c-l> <right>
+noremap <c-l> w
 cnoremap <c-h> <left>
 cnoremap <c-l> <right>
 cnoremap <c-o> <backspace>
