@@ -124,7 +124,7 @@ nnoremap [Gtags]f :Gtags -f<cr><cr>
 nmap <space>u [Unite]
 nnoremap [Unite] <nop>
 nnoremap <silent> [Unite]f :Unite file -tab<cr>
-nnoremap <silent> [Unite]F :Unite file<cr>
+nnoremap <silent> [Unite]F :Unite file -no-split<cr>
 
 function! s:SID_PREFIX()
 	return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
