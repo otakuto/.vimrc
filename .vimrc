@@ -169,6 +169,11 @@ augroup vimrc-auto-mkdir
 	endfunction
 augroup END
 
+if !isdirectory(expand('~/.vim'))
+	silent !mkdir -p ~/.vim/neobundle
+	silent !git clone http://github.com/Shougo/neobundle.vim ~/.vim/neobundle/neobundle.vim
+endif
+
 if has('vim_starting')
 	set runtimepath+=~/.vim/neobundle/neobundle.vim/
 endif
