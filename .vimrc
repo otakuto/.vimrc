@@ -236,7 +236,7 @@ function! s:remove_dust()
 	call setpos(".", cursor)
 	unlet cursor
 endfunction
-autocmd BufWritePre * call <SID>remove_dust()
+autocmd BufWritePre *[^(\.md)] call <SID>remove_dust()
 
 autocmd BufNewFile *.c 0r ! echo '
 \\#include <stdio.h>\n
