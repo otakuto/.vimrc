@@ -171,40 +171,31 @@ augroup vimrc-auto-mkdir
 augroup END
 
 if !isdirectory(expand('~/.vim'))
-	silent !mkdir -p ~/.vim/neobundle
-	silent !git clone http://github.com/Shougo/neobundle.vim ~/.vim/neobundle/neobundle.vim
+	silent !mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim
+	silent !git clone https://github.com/Shougo/dein.vim.git ~/.vim/dein/repos/github.com/Shougo/dein.vim
 endif
 
-if has('vim_starting')
-	set runtimepath+=~/.vim/neobundle/neobundle.vim/
-endif
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
-call neobundle#begin(expand('~/.vim/neobundle/'))
+call dein#begin(expand('~/.vim/dein'))
 filetype plugin indent on
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc.vim',
-\{
-\	'build' :
-\	{
-\		'linux' : 'make',
-\	},
-\}
-NeoBundle 'Shougo/unite-build'
-NeoBundle 'vim-jp/cpp-vim'
-NeoBundle 'kana/vim-operator-user'
-NeoBundle 'kana/vim-altr'
-NeoBundle 'Lokaltog/vim-easymotion'
+call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+call dein#add('Shougo/unite-build')
+call dein#add('vim-jp/cpp-vim')
+call dein#add('kana/vim-operator-user')
+call dein#add('kana/vim-altr')
+call dein#add('Lokaltog/vim-easymotion')
 let g:EasyMotion_do_shade = 0
 let g:EasyMotion_smartcase = 1
-NeoBundle 'haya14busa/incsearch.vim'
-NeoBundle 'rhysd/vim-clang-format'
+call dein#add('haya14busa/incsearch.vim')
+call dein#add('rhysd/vim-clang-format')
 let g:clang_format#style_options =
 \{
 \	'BasedOnStyle' : 'google',
 \	'Standard' : 'C++11',
 \	'BreakBeforeBraces' : 'Allman',
 \}
-NeoBundle 'thinca/vim-quickrun'
+call dein#add('thinca/vim-quickrun')
 let g:quickrun_config =
 \{
 \	'_' :
@@ -225,11 +216,14 @@ let g:quickrun_config =
 \		'cmdopt' : '-Wall -std=c11',
 \	},
 \}
-NeoBundle 'Shougo/vimfiler'
-NeoBundle 'Shougo/unite.vim'
+call dein#add('Shougo/vimfiler')
+call dein#add('Shougo/unite.vim')
 let g:unite_enable_split_vertically = 1
-NeoBundleCheck
-call neobundle#end()
+call dein#end()
+
+if dein#check_install()
+	call dein#install()
+endif
 
 function! s:remove_dust()
 	let cursor = getpos(".")
