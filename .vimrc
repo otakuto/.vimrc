@@ -98,6 +98,7 @@ noremap x "_x
 noremap X "_dd
 vnoremap p "0p
 vnoremap i I
+vnoremap * "zy:let @/ = @z<cr>n
 nnoremap A :a!<cr>
 inoremap <silent> <f5> <esc>:QuickRun<cr>
 nnoremap <silent> <f5> <esc>:QuickRun<cr>
