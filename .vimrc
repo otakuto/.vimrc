@@ -246,4 +246,8 @@ autocmd BufNewFile *.cpp 0r ! echo '
 \int main()\n
 \{\n
 \}'
-
+autocmd BufNewFile *.hs 0r ! echo '
+\import Control.Applicative\n
+\import Data.Function\n
+\\n
+\main = do'
